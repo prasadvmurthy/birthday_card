@@ -3,4 +3,10 @@ __pycache__/
 *.pyo
 .env
 venv/
+.venv/
 .vscode/
+sshkey
+sshkey.pub
+sshkey.txt
+*.pem
+*.key
