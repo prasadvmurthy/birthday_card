@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>32 Reasons I Love You</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>💖 32 Reasons I Love You 💖</h1>
+        <p id="reason">Click the button to reveal the first reason!</p>
+        <button onclick="showNext()">Reveal Next Reason</button>
+    </div>
+
+    <script>
+        const reasons = {{ reasons|tojson }};
+        let index = 0;
+
+        function showNext() {
+            if (index < reasons.length) {
+                document.getElementById("reason").innerText = reasons[index];
+                index++;
+            } else {
+                document.getElementById("reason").innerText = "🎉 That’s all 32 reasons — but I’ll keep finding more every day!";
+            }
+        }
+    </script>
+</body>
+</html>
