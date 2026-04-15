@@ -38,7 +38,11 @@ reasons = [
 ]
 
 @app.route("/")
-def index():
+def splash():
+    return render_template("splash.html")
+
+@app.route("/card")
+def card():
     return render_template("index.html", reasons=reasons)
 
 if __name__ == "__main__":
